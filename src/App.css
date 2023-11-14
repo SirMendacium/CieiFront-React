@@ -176,10 +176,38 @@ section {
   margin-top: 4rem;
 }
 
+.slider-wrapper {
+  width: 80%;
+  margin: 100px auto;
+  position: relative; /* Agrega esta línea para posicionar de forma relativa */
 
-.slider-wrapper  {
-  margin-bottom: 0;
+  transform: scaleY(0.7);
 }
+
+.slider-button {
+  position: absolute; /* Agrega esta línea para posicionar de forma absoluta */
+  top: 50%; /* Centra verticalmente en relación con el contenedor padre */
+  transform: translateY(-50%); /* Ajusta para centrar exactamente */
+  border: none;
+  font-size: 24px;
+  color: #000;
+  cursor: pointer;
+  border-radius: 100%;
+
+}
+
+.slider-button:first-child {
+  left: 10px; /* Posición del botón izquierdo */
+}
+
+.slider-button:last-child {
+  right: 10px; /* Posición del botón derecho */
+}
+
+.slider-image {
+  width: 100%;
+}
+
 
 #values, #opinions, #wrapper {
   margin-top: 0;

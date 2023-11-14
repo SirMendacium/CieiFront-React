@@ -7,9 +7,19 @@ import valuesSVG from "./assets/img/values.svg";
 import teenagersSVG from "./assets/img/teenagers.svg";
 import StudentsOpinion from "./components/StudentsOpinion";
 import ImageAndText from "./components/ImageAndText";
-function App() {
-  const [count, setCount] = useState(0);
+import ImageSlider from "./components/ImageSlider";
+import student1 from "./assets/img/estudiantes/1.png";
+import student2 from "./assets/img/estudiantes/2.avif";
+import student3 from "./assets/img/estudiantes/2.png";
+import student4 from "./assets/img/estudiantes/3.png";
 
+import liceo1 from "./assets/img/imagenesLiceo/1.jpg";
+import liceo2 from "./assets/img/imagenesLiceo/2.jpg";
+import liceo3 from "./assets/img/imagenesLiceo/3.jpg";
+import liceo4 from "./assets/img/imagenesLiceo/4.jpg";
+
+function App() {
+  const images = [liceo1, liceo2, liceo3, liceo4];
   return (
     <div className="main">
       <nav className="navbar navbar-expand-lg sticky-top container">
@@ -71,41 +81,15 @@ function App() {
         comunicación
       </ImageAndText>
 
-      <section id="wrapper">
-        <article className="slider-wrapper theme-default">
-          <div id="slider" className="nivoSlider">
-            <img
-              src="img/imagenesLiceo/1.jpg"
-              data-thumb="demo/images/toystory.jpg"
-              alt=""
-            />
-            <img
-              src="img/imagenesLiceo/2.jpg"
-              data-thumb="demo/images/up.jpg"
-              alt=""
-            />
-            <img
-              src="img/imagenesLiceo/3.jpg"
-              data-thumb="demo/images/walle.jpg"
-              alt=""
-              data-transition="slideInLeft"
-            />
-            <img
-              src="img/imagenesLiceo/4.jpg"
-              data-thumb="demo/images/nemo.jpg"
-              alt=""
-            />
-          </div>
-        </article>
-      </section>
+      <ImageSlider images={images} />
 
       <section className="container" id="opinions">
         <h2>Nuestro estudiantes hablan:</h2>
         <div className="row">
-          <StudentsOpinion opinion="asds" />
-          <StudentsOpinion opinion="asds" />
-          <StudentsOpinion opinion="asds" />
-          <StudentsOpinion opinion="asds" />
+          <StudentsOpinion opinion="asds" src={student1} />
+          <StudentsOpinion opinion="asds" src={student2} />
+          <StudentsOpinion opinion="asds" src={student3} />
+          <StudentsOpinion opinion="asds" src={student4} />
         </div>
       </section>
 

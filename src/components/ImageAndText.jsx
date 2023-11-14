@@ -2,6 +2,15 @@ import { useState } from "react";
 
 export default function ({ children, src, title, right }) {
   const side = right ? "row-reverse" : "left";
+
+  const [show, setShow] = useState(false);
+
+  const handleClick = () => {
+    setShow(!show);
+  };
+
+  const showText = show ? "" : "hideText";
+
   return (
     <section id="values " className="container">
       <div className={`${side} row`}>
@@ -9,7 +18,7 @@ export default function ({ children, src, title, right }) {
           <h2>{title}</h2>
           <p>{children}</p>
 
-          <span className="hideText">
+          <span className={showText}>
             <p>
               efectiva y el liderazgo. También creemos que la igualdad y la
               horizontalidad en la relación estudiante-profesor son
@@ -20,7 +29,9 @@ export default function ({ children, src, title, right }) {
             </p>
           </span>
 
-          <button className="read-more-btn">Leer mas</button>
+          <button className="read-more-btn" onClick={handleClick}>
+            Leer mas
+          </button>
         </div>
         <div className="col-md-6">
           <img src={src} alt="" />
